@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&family=Silkscreen:wght@400;700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.custom-bg {
+  background-color: #373A40;
+}
+body {
+  margin: 0;
+  padding: 0;
+  color: #fff;
+}
+header{
+  font-family: "Handjet", sans-serif;
+}
+
+.navbar {
+  transition: background-color 0.5s ease;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+}
+.nav-link {
+  transition: color 0.5s ease;
+}
+.nav-link:hover {
+  text-decoration: underline;
+  opacity: 0.8;
+}
+
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler:focus, .navbar-toggler:active {
+  border: 2px solid white;
+  outline: none;
+}
+
+.bannertxt{
+  position: relative;
+  width:100%;
+  height:100vh;
+  background-image: linear-gradient(rgba(0,130,127,0.4), rgba(0,130,127,0.2)), url("https://wallpapercave.com/wp/wp5426686.jpg");
+  background-size: cover;
+  background-position: center
+}
+.banner{
+  width: 100%;
+  top:60%;
+  position:absolute;
+  text-align: center;
+  transform: translateY(-50%);
+  color:black;
+  font-family: "Silkscreen", sans-serif;
+  color: white;
+}
+.banner h1{
+  font-size:50px;
+  font-weight:600;
+  color: white;
+}
+.banner p{
+  margin: 20px auto;
+  font-weight: 100;
+  line-height:25px;
+  color: white;
+}
+
+.bttn {
+  font-family: "Silkscreen", sans-serif;
+  width: 150px;
+  height: 50px;
+  padding: 0;
+  margin: 20px 10px;
+  background: transparent;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  border: 3px solid gray;
+  border-radius: 0;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.hovereff {
+  background: #686D76;
+  height: 100%;
+  width: 0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  transition: width 0.5s;
+}
+
+.bttn:hover .hovereff {
+  width: 100%;
+
+}
+
+.bttn:hover {
+  border: none;
+}
+
+.continuepage{
+  width:100%;
+  padding:50px 0;
+  background-color: #686D76;
+  align-items: center;
+}
+.main{
+  max-width:95%;
+  margin:0 auto;
+  display: flex;
+  align-items:center;
+  justify-content:space-around;
+  padding:20px 100px;
+}
+.continuepage {
+  width: 100%;
+  padding: 50px 0;
+  background-color: #686D76;
+  align-items: center;
+}
+
+.main {
+  max-width: 95%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px 100px;
+}
+.shorttext {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.shorttext.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.containercss {
+  font-family: "Silkscreen", sans-serif;
+  display: flex;
+  border-radius: 20px;
+  overflow: hidden;
+  max-width: 80%;
+  width: 100%;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.containercss.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.shorttext h2 {
+  font-family: "Silkscreen", sans-serif;
+  color: white;
+  font-size: 25px;
+  font-weight: 100;
+  text-align: center;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+}
+
+.shorttext p {
+  font-family: "Silkscreen", sans-serif;
+  font-size: 16px;
+  line-height: 28px;
+  color: white;
+  text-align: justify;
+  margin-bottom: 45px;
+}
+
+.containercenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px ;
+  background-color: #686D76;
+  padding: 50px;
+}
+.textbox {
+  padding: 40px;
+  background-color: #DC5F00;
+  color: #eee;
+  width: 50%;
+}
+
+.textbox h1 {
+  font-family: "Silkscreen", sans-serif;
+  margin: 0;
+  font-size: 36px;
+}
+
+.textbox p {
+  font-family: "Silkscreen", sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.imagebox {
+  width: 50%;
+}
+
+.imagebox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+footer{
+  font-family: "Silkscreen", sans-serif
+}
+.containercss {
+  font-family: "Silkscreen", sans-serif;
+  display: flex;
+  border-radius: 20px;
+  overflow: hidden;
+  max-width: 80%;
+  width: 100%;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: translateY(55px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.containercss.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#gameCarousel {
+  font-family: "Silkscreen", sans-serif;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.carousel-item img {
+  width: 1200px;
+  height: 800px;
+  object-fit: cover;
+  margin: 0 auto;
+}
+
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  border-radius: 5px;
+  color: #B7B7B7;
+}
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
+  z-index: 1;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  border-radius: 5px;
+}
+.dropdown-menu {
+  font-size: 1.2rem;
+}
+
+.dropdown-item {
+  padding: 10px 15px;
+}
+
+.dropdown-item:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.modal-header .btn-close {
+  filter: ;
+  background-color: red;
+  opacity: 1;
+}
+.modal-header .btn-close:hover {
+  background-color: darkred;
+}
+.dropdown-menu {
+  font-size: 1.2rem;
+}
+
+.dropdown-item {
+  padding: 10px 15px;
+}
+
+.dropdown-item:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+
+
+
+

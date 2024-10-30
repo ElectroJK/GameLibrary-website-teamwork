@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&family=Silkscreen:wght@400;700&display=swap');
+body {
+    background-color: #2a2a2a;
+    color: #ccc;
+    margin: 0;
+    padding: 20px;
+}
+
+header{
+    font-family: "Handjet", sans-serif;
+}
+#currentDateTime{
+  font-family: "Silkscreen", sans-serif;
+}
+.navbar {
+  transition: background-color 0.5s ease;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+}
+.nav-link {
+  transition: color 0.5s ease;
+}
+.nav-link:hover {
+  text-decoration: underline;
+  opacity: 0.8;
+}
+
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler:focus, .navbar-toggler:active {
+  border: 2px solid white;
+  outline: none;
+}
+
+h1 {
+    color: #ffffff;
+  font-family: "Silkscreen", sans-serif;
+    margin-top: 80px;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+.card {
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.card-body {
+ font-family: "Silkscreen", sans-serif;
+    border-radius: 0 0 15px 15px;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    color: #ffcc00;
+}
+
+.card-text {
+    font-size: 0.9rem;
+    color: #e0e0e0;
+}
+
+footer {
+  font-family: "Silkscreen", sans-serif;
+    text-align: center;
+    padding: 20px;
+    color: white;
+    border-radius: 8px;
+    margin-top: 30px;
+}
+.read-more {
+  color: #ffcc00;
+}
+
+.more-text {
+  display: none;
+  color: white;
+}
+.modal-header .btn-close {
+  filter: ;
+  background-color: red;
+  opacity: 1;
+}
+.modal-header .btn-close:hover {
+  background-color: darkred;
+}

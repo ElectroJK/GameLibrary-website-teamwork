@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ</title>
+
+  <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="FAQ.css">
+</head>
+<body class="container py-5">
+
+<header id="navbar4all">
+  <nav class="navbar fixed-top navbar-expand-lg navbar-custom">
+    <div class="container-fluid">
+      <a class="navbar-brand logo" href="main.html" style="color: white; font-size: 40px;">Gamebout</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="border: none">
+        <span class="navbar-toggler-icon" style="background-image:url('https://i0.wp.com/benjaminmarcello.nl/wp-content/uploads/2021/12/menu-icon-PNG-1.png?fit=500%2C500&ssl=1'); width: 60px; height: 40px;"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item me-4">
+            <a class="nav-link" href="Games.html" style="color: white; font-size: 30px;">Featured Games</a>
+          </li>
+          <li class="nav-item me-4">
+            <a class="nav-link" href="genre.html" style="color: white; font-size: 30px;">Genre</a>
+          </li>
+          <li class="nav-item me-4">
+            <a class="nav-link" href="news.html" style="color: white; font-size: 30px;">News</a>
+          </li>
+          <li class="nav-item me-4">
+            <a class="nav-link" href="Games_rating.html" style="color: white; font-size: 30px;">Games Rating</a>
+          </li>
+        </ul>
+        <button id="login-btn" class="btn btn-outline-primary ms-1" style="font-size: 30px;" onclick="toggleLogin()">Login</button>
+        <button id="logout-btn" class="btn btn-outline-primary ms-1" style="font-size: 30px; display: none;" onclick="logout()">Logout</button>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="loginModalLabel">Login</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="login-form">
+          <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control" id="username" placeholder="Enter your username" required>
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <div class="input-group">
+              <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+              <button type="button" id="toggle-password" class="btn btn-outline-secondary">Show</button>
+            </div>
+          </div>
+          <button type="button" class="btn btn-primary" onclick="login()">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<h1 class="text-center mb-5">Frequently Asked Questions (FAQ)</h1>
+
+<div class="accordion" id="faqAccordion">
+  <div>
+    <div class="accordion-header">What is Gamebout?</div>
+    <div class="accordion-content">
+      Gamebout is an online platform that provides news, reviews, and updates about various video games. We aim to keep gamers informed about the latest releases, updates, and trends in the gaming industry.
+    </div>
+  </div>
+
+  <div>
+    <div class="accordion-header">How can I register for an account?</div>
+    <div class="accordion-content">
+      To register for an account, go to our <a href="main.html" class="text-decoration-none">main page</a> and fill in the required information. Once you submit the form, you will receive a confirmation email with a link to activate your account.
+    </div>
+  </div>
+
+  <div>
+    <div class="accordion-header">What types of games do you cover?</div>
+    <div class="accordion-content">
+      We cover a wide range of game genres including action, RPG, strategy, sports, and more. Whether you're interested in the latest blockbuster titles or indie games, you'll find information and updates on our site.
+    </div>
+  </div>
+
+  <div>
+    <div class="accordion-header">Can I submit my own game review?</div>
+    <div class="accordion-content">
+      Yes! We welcome contributions from our community. If you'd like to submit a game review, go to <a href="Games_rating.html" class="text-decoration-none">games rating</a> for more details on how to submit your review.
+    </div>
+  </div>
+
+  <div>
+    <div class="accordion-header">How often is the site updated?</div>
+    <div class="accordion-content">
+      Our site is updated daily with the latest news, reviews, and articles. We strive to keep our content fresh and relevant to provide you with the most current information in the gaming world.
+    </div>
+  </div>
+
+  <div>
+    <div class="accordion-header">Who can I contact for support?</div>
+    <div class="accordion-content">
+      If you need support, please write a message on the <a href="main.html" class="text-decoration-none">main page</a>. Our support team is available to assist with any questions or issues you may have.
+    </div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
+<script src="Login.js"></script>
+
+<script>
+  const headers = document.querySelectorAll('.accordion-header');
+
+  headers.forEach(header => {
+    header.addEventListener('click', function() {
+      if (this.classList.contains('active')) {
+        this.classList.remove('active');
+      } else {
+        headers.forEach(h => h.classList.remove('active'));
+        this.classList.add('active');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

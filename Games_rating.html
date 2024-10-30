@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Games_rating</title>
+  <link rel="stylesheet" href="games_rating.css">
+  <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.min.css">
+</head>
+<body class="custom-bg">
+<header id="navbar4all">
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light navbar-custom">
+    <div class="container-fluid">
+      <a class="navbar-brand logo" href="main.html" style="color: white; font-size: 40px;">Gamebout</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="border: none;">
+        <span class="navbar-toggler-icon" style="background-image: url('https://i0.wp.com/benjaminmarcello.nl/wp-content/uploads/2021/12/menu-icon-PNG-1.png?fit=500%2C500&ssl=1'); width: 60px; height: 40px;"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item me-4">
+            <a class="nav-link" href="Games.html" style="color: white; font-size: 30px;">Featured Games</a>
+          </li>
+          <li class="nav-item me-4">
+            <a class="nav-link" href="genre.html" style="color: white; font-size: 30px;">Genre</a>
+          </li>
+          <li class="nav-item me-4">
+            <a class="nav-link" href="news.html" style="color: white; font-size: 30px;">News</a>
+          </li>
+          <li class="nav-item me-4">
+            <a class="nav-link" href="Games_rating.html" style="color: white; font-size: 30px;">Games Rating</a>
+          </li>
+        </ul>
+        <button id="login-btn" class="btn btn-outline-primary ms-1" style="font-size: 30px;" onclick="toggleLogin()">Login</button>
+        <button id="logout-btn" class="btn btn-outline-primary ms-1" style="font-size: 30px; display: none;" onclick="logout()">Logout</button>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="loginModalLabel">Login</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="login-form">
+          <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control" id="username" placeholder="Enter your username" required>
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <div class="input-group">
+              <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+              <button type="button" id="toggle-password" class="btn btn-outline-secondary">Show</button>
+            </div>
+          </div>
+          <button type="button" class="btn btn-primary" onclick="login()">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main>
+  <section id="game-rating">
+    <h2 class="up">Rate Your Favorite Game</h2>
+    <form id="rating-form">
+      <label for="game-select">Select a game to rate:</label><br>
+      <select id="game-select" name="game-select">
+        <option value="game1: Deadlock">Game 1: Deadlock</option>
+        <option value="game2: Dota2">Game 2: Dota 2</option>
+        <option value="game3: Black Myth Wukong">Game 3: Black Myth Wukong</option>
+      </select>
+      <br><br>
+      <p>Rate the game:</p>
+      <div class="rating-labels">
+        <label>
+          <input type="radio" id="star5" name="rating" value="5">
+          5 stars
+        </label>
+        <label>
+          <input type="radio" id="star4" name="rating" value="4">
+          4 stars
+        </label>
+        <label>
+          <input type="radio" id="star3" name="rating" value="3">
+          3 stars
+        </label>
+        <label>
+          <input type="radio" id="star2" name="rating" value="2">
+          2 stars
+        </label>
+        <label>
+          <input type="radio" id="star1" name="rating" value="1">
+          1 star
+        </label>
+      </div>
+      <br>
+      <label for="game-review">Write your review:</label><br>
+      <textarea id="game-review" name="game-review" rows="5" placeholder="Share your thoughts..."></textarea>
+      <br><br>
+      <input type="submit" value="Submit Rating">
+    </form>
+  </section>
+  <section id="user-reviews">
+    <h2>User Reviews</h2>
+    <div id="reviews-container"></div>
+  </section>
+  <section id="top-10-games">
+    <h2>Top 10 Games</h2>
+    <ol>
+      <li><strong>The Legend of Zelda: Breath of the Wild</strong> – Explore an expansive world in this critically acclaimed adventure.</li>
+      <li><strong>Red Dead Redemption 2</strong> – An epic tale of life in America at the dawn of the modern age.</li>
+      <li><strong>The Witcher 3: Wild Hunt</strong> – Embark on a massive RPG journey filled with monsters, magic, and adventure.</li>
+      <li><strong>God of War</strong> – Join Kratos and his son on a powerful story of gods.</li>
+      <li><strong>Grand Theft Auto V</strong> – Experience open-world action in a living, breathing city.</li>
+      <li><strong>Minecraft</strong> – Build, explore, and survive in this sandbox game that continues to evolve.</li>
+      <li><strong>Dark Souls III</strong> – A challenging and atmospheric action RPG.</li>
+      <li><strong>Fortnite</strong> – Battle royale excitement with building mechanics that sets it apart.</li>
+      <li><strong>Overwatch 2</strong> – A team-based first-person shooter with unique characters and abilities.</li>
+      <li><strong>Cyberpunk 2077</strong> – Dive into a massive open-world set in a dystopian future.</li>
+    </ol>
+  </section>
+  <img id="draggable-image" src="https://static.vecteezy.com/system/resources/thumbnails/012/419/385/small_2x/red-notepaper-pin-ilustration-push-pin-isolated-on-the-white-background-free-png.png" alt="Draggable Image">
+</main>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
+<script src="Login.js"></script>
+<script src="ratingdata.js"></script>
+<script src="themes.js"></script>
+<script>
+  const image = document.getElementById('draggable-image');
+
+  let offsetX, offsetY;
+
+  image.addEventListener('mousedown', function (e) {
+    offsetX = e.clientX - image.getBoundingClientRect().left;
+    offsetY = e.clientY - image.getBoundingClientRect().top;
+
+    document.addEventListener('mousemove', mouseMoveHandler);
+    document.addEventListener('mouseup', mouseUpHandler);
+    image.style.cursor = 'grabbing';
+  });
+
+  function mouseMoveHandler(e) {
+    image.style.left = `${e.clientX - offsetX}px`;
+    image.style.top = `${e.clientY - offsetY}px`;
+  }
+
+  function mouseUpHandler() {
+    document.removeEventListener('mousemove', mouseMoveHandler);
+    document.removeEventListener('mouseup', mouseUpHandler);
+    image.style.cursor = 'grab';
+  }
+</script>
+</body>
+</html>

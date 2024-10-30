@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&family=Silkscreen:wght@400;700&display=swap');
+*{
+  color:white;
+}
+body {
+  font-family: "Silkscreen", sans-serif;
+  margin: 0;
+  font-family: "Handjet", sans-serif;
+}
+
+.form-label {
+  color: black;
+}
+
+.modal-title{
+  color: black;
+}
+
+.custom-bg{
+  background-color: #059212;
+}
+ header {
+  font-family: "Handjet", sans-serif;
+}
+
+.navbar {
+  transition: background-color 0.5s ease;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+}
+.nav-link {
+  transition: color 0.5s ease;
+}
+.nav-link:hover {
+  text-decoration: underline;
+  opacity: 0.8;
+}
+
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler:focus, .navbar-toggler:active {
+  border: 2px solid white;
+  outline: none;
+}
+
+
+
+.background-image {
+  background-image: url('Abzu.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 65vh;
+}
+
+.content {
+  margin-top: 10px;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+h1 {
+  font-family: "Silkscreen", sans-serif;
+  margin-bottom: 20px;
+}
+
+p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: "Silkscreen", sans-serif;
+}
+.navbar-custom {
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+.modal-header .btn-close {
+  filter: ;
+  background-color: red;
+  opacity: 1;
+}
+.modal-header .btn-close:hover {
+  background-color: darkred;
+}
+

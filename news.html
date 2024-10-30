@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="news.css">
+    <style>
+        .more-text {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<header id="navbar4all">
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light navbar-custom">
+    <div class="container-fluid">
+      <a class="navbar-brand logo" href="main.html" style="color: white; font-size: 40px;">Gamebout</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="border: none;">
+        <span class="navbar-toggler-icon" style="background-image: url('https://i0.wp.com/benjaminmarcello.nl/wp-content/uploads/2021/12/menu-icon-PNG-1.png?fit=500%2C500&ssl=1'); width: 60px; height: 40px;"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item me-4">
+            <a class="nav-link" href="Games.html" style="color: white; font-size: 30px;">Featured Games</a>
+          </li>
+          <li class="nav-item me-4">
+            <a class="nav-link" href="genre.html" style="color: white; font-size: 30px;">Genre</a>
+          </li>
+          <li class="nav-item me-4">
+            <a class="nav-link" href="news.html" style="color: white; font-size: 30px;">News</a>
+          </li>
+          <li class="nav-item me-4">
+            <a class="nav-link" href="Games_rating.html" style="color: white; font-size: 30px;">Games Rating</a>
+          </li>
+        </ul>
+        <button id="login-btn" class="btn btn-outline-primary ms-1" style="font-size: 30px;" onclick="toggleLogin()">Login</button>
+        <button id="logout-btn" class="btn btn-outline-primary ms-1" style="font-size: 30px; display: none;" onclick="logout()">Logout</button>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="loginModalLabel">Login</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="login-form">
+          <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control" id="username" placeholder="Enter your username" required>
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <div class="input-group">
+              <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+              <button type="button" id="toggle-password" class="btn btn-outline-secondary">Show</button>
+            </div>
+          </div>
+          <button type="button" class="btn btn-primary" onclick="login()">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-5" style="margin-top: 100px;">
+    <h1 class="text-center text-warning" style="margin-top: 80px;">Game News</h1>
+
+    <div id="currentDateTime" class="text-center text-danger my-4"></div>
+
+    <div class="row mt-4">
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+                <img src="black4.jpg" class="card-img-top" alt="Black game">
+                <div class="card-body">
+                    <h5 class="card-title">Black Myth Wukong Earned $852 Million on Steam</h5>
+                    <p class="card-text">Black Myth Wukong will not let go of the information field from its tenacious monkey paws. Game Science studio recently announced that the game has sold 10 million copies on both platforms (PC and PS5).</p>
+                    <button class="btn btn-primary read-more">Read more</button>
+                    <div class="more-text">
+                        <p>Additional information: The game has been highly praised for its graphics and mechanics, attracting the attention of both critics and players.</p>
+                        <p><strong>Date:</strong> October 23, 2024</p>
+                        <p><strong>Author:</strong> Igor Smirnov</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+                <img src="deadlock.jpg" class="card-img-top" alt="Deadlock Game">
+                <div class="card-body">
+                    <h5 class="card-title">XQc: "Deadlock is the future of all games. It's flawless."</h5>
+                    <p class="card-text">Streamer Felix xQc Lengyel shared his opinion about the new shooter Deadlock from Valve. The content creator was quoted by the Telegram channel Deadlock News.</p>
+                    <button class="btn btn-primary read-more">Read more</button>
+                    <div class="more-text">
+                        <p>Additional information: The game offers unique mechanics and style, highlighting its potential as a future hit.</p>
+                        <p><strong>Date:</strong> October 22, 2024</p>
+                        <p><strong>Author:</strong> Anna Petrova</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+                <img src="dota2.jpg" class="card-img-top" alt="Dota 2 International">
+                <div class="card-body">
+                    <h5 class="card-title">"Dota 2" The International 2024 Dates Announced</h5>
+                    <p class="card-text">Valve has announced the dates for "The International 2024," the main Dota 2 tournament.</p>
+                    <button class="btn btn-primary read-more">Read more</button>
+                    <div class="more-text">
+                        <p>Additional information: The tournament promises to be exciting, featuring the best teams from around the world.</p>
+                        <p><strong>Date:</strong> October 21, 2024</p>
+                        <p><strong>Author:</strong> Dmitry Kovalev</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+                <img src="starfield.jpg" class="card-img-top" alt="Starfield Game">
+                <div class="card-body">
+                    <h5 class="card-title">Starfield Breaks Sales Record</h5>
+                    <p class="card-text">Bethesda's latest release, Starfield, has shattered previous sales records, becoming the fastest-selling game in the company's history.</p>
+                    <button class="btn btn-primary read-more">Read more</button>
+                    <div class="more-text">
+                        <p>Additional information: The game offers an open world with endless exploration possibilities.</p>
+                        <p><strong>Date:</strong> October 20, 2024</p>
+                        <p><strong>Author:</strong> Ekaterina Vasilieva</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+                <img src="cyberpunk.jpg" class="card-img-top" alt="Cyberpunk Game">
+                <div class="card-body">
+                    <h5 class="card-title">Cyberpunk 2077’s Phantom Liberty Expansion Sees Huge Success</h5>
+                    <p class="card-text">CD Projekt Red's Cyberpunk 2077 received a massive resurgence in popularity thanks to the Phantom Liberty DLC.</p>
+                    <button class="btn btn-primary read-more">Read more</button>
+                    <div class="more-text">
+                        <p>Additional information: This expansion brought new quests, characters, and opportunities for players.</p>
+                        <p><strong>Date:</strong> October 19, 2024</p>
+                        <p><strong>Author:</strong> Oleg Ivanov</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+                <img src="eldenring.jpg" class="card-img-top" alt="Elden Ring DLC">
+                <div class="card-body">
+                    <h5 class="card-title">Elden Ring DLC Announced</h5>
+                    <p class="card-text">FromSoftware has revealed plans for an upcoming DLC to Elden Ring, which will feature new bosses and areas for players to explore.</p>
+                    <button class="btn btn-primary read-more">Read more</button>
+                    <div class="more-text">
+                        <p>Additional information: This expansion is expected to expand the story and gameplay possibilities.</p>
+                        <p><strong>Date:</strong> October 18, 2024</p>
+                        <p><strong>Author:</strong> Alexey Stepanov</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="bg-custom text-center text-white py-3">
+    <p>© 2024 Gamebout. All rights reserved.</p>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
+<script src="Login.js"></script>
+<script src="themes.js"></script>
+<script src="news.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
