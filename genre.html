@@ -3,20 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <title>Game Genres</title>
+  <!-- Link to custom CSS for additional styles -->
   <link rel="stylesheet" href="genre.css">
+  <!-- Link to Bootstrap CSS for responsive design and styling -->
   <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.min.css">
+  <!-- Link to Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 <body>
+<!-- Header with navigation bar -->
 <header id="navbar4all">
   <nav class="navbar fixed-top navbar-expand-lg navbar-light navbar-custom">
     <div class="container-fluid">
+      <!-- Brand logo linking to main page -->
       <a class="navbar-brand logo" href="main.html" style="color: white; font-size: 40px;">Gamebout</a>
+      <!-- Navbar toggler for mobile view -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="border: none;">
         <span class="navbar-toggler-icon" style="background-image: url('https://i0.wp.com/benjaminmarcello.nl/wp-content/uploads/2021/12/menu-icon-PNG-1.png?fit=500%2C500&ssl=1'); width: 60px; height: 40px;"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
+          <!-- Navigation links to different pages -->
           <li class="nav-item me-4">
             <a class="nav-link" href="Games.html" style="color: white; font-size: 30px;">Featured Games</a>
           </li>
@@ -30,6 +37,7 @@
             <a class="nav-link" href="Games_rating.html" style="color: white; font-size: 30px;">Games Rating</a>
           </li>
         </ul>
+        <!-- Login and Logout buttons -->
         <button id="login-btn" class="btn btn-outline-primary ms-1" style="font-size: 30px;" onclick="toggleLogin()">Login</button>
         <button id="logout-btn" class="btn btn-outline-primary ms-1" style="font-size: 30px; display: none;" onclick="logout()">Logout</button>
       </div>
@@ -37,6 +45,7 @@
   </nav>
 </header>
 
+<!-- Login modal for user authentication -->
 <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -54,6 +63,7 @@
             <label for="password" class="form-label">Password</label>
             <div class="input-group">
               <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+              <!-- Button to toggle password visibility -->
               <button type="button" id="toggle-password" class="btn btn-outline-secondary">Show</button>
             </div>
           </div>
@@ -64,9 +74,11 @@
   </div>
 </div>
 
+<!-- Section for displaying different game genres -->
 <section>
   <h2 class="text-success">Game Genres</h2>
   <div class="genres-cont">
+    <!-- Individual genre sections with image and description -->
     <div class="genre" id="action">
       <img src="https://image.api.playstation.com/vulcan/img/rnd/202010/2217/k7p73ZiqCjnREMgILPZqyld2.png" alt="Action Icon" class="icon">
       <div class="genre-info">
@@ -127,21 +139,19 @@
       <img src="https://cdn.culture.ru/images/7211b3f5-2768-5ce4-864d-6e375edf808f" alt="Sports Icon" class="icon">
       <div class="genre-info">
         <h3>Sports</h3>
-        <p>Games that simulate real-world sports like football, basketball, and soccer.</p>
-      </div>
-    </div>
-    <div class="genre" id="horror">
-      <img src="https://www.pcgamesn.com/wp-content/sites/pcgamesn/2022/04/best-vr-horror-games.jpg" alt="Horror Icon" class="icon">
-      <div class="genre-info">
-        <h3>Horror</h3>
-        <p>Games designed to scare and unsettle players with dark themes and suspenseful gameplay.</p>
+        <p>Games that simulate traditional sports or competitive athletic activities.</p>
       </div>
     </div>
   </div>
 </section>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-<script src="bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
-<script src="Login.js"></script>
-<script src="themes.js"></script>
+
+<!-- Footer section for copyright information -->
+<footer>
+  <p style="color: white;">© 2023 Gamebout. All rights reserved.</p>
+</footer>
+
+<!-- Scripts for Bootstrap and custom functionality -->
+<script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+<script src="genre.js"></script>
 </body>
 </html>
