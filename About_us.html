@@ -1,20 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Meta charset for character encoding -->
   <meta charset="UTF-8">
   <title>About Us Page</title>
+  <!-- Link to custom CSS for the page -->
   <link rel="stylesheet" href="about_us.css">
+  <!-- Link to Bootstrap CSS for styling -->
   <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.min.css">
 </head>
 <body class=custom-bg>
+
+<!-- Header section with navigation bar -->
 <header id="navbar4all">
   <nav class="navbar fixed-top navbar-expand-lg navbar-custom">
     <div class="container-fluid">
+      <!-- Brand/logo for the website linking to the main page -->
       <a class="navbar-brand logo" href="main.html" style="color: white; font-size: 40px;">Gamebout</a>
+      <!-- Button for toggling mobile navigation -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="border: none">
         <span class="navbar-toggler-icon" style="background-image:url('https://i0.wp.com/benjaminmarcello.nl/wp-content/uploads/2021/12/menu-icon-PNG-1.png?fit=500%2C500&ssl=1'); width: 60px; height: 40px;"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
+        <!-- Navigation links for various pages -->
         <ul class="navbar-nav ms-auto">
           <li class="nav-item me-4">
             <a class="nav-link" href="Games.html" style="color: white; font-size: 30px;">Featured Games</a>
@@ -29,6 +37,7 @@
             <a class="nav-link" href="Games_rating.html" style="color: white; font-size: 30px;">Games Rating</a>
           </li>
         </ul>
+        <!-- Login and logout buttons -->
         <button id="login-btn" class="btn btn-outline-primary ms-1" style="font-size: 30px;" onclick="toggleLogin()">Login</button>
         <button id="logout-btn" class="btn btn-outline-primary ms-1" style="font-size: 30px; display: none;" onclick="logout()">Logout</button>
       </div>
@@ -36,6 +45,7 @@
   </nav>
 </header>
 
+<!-- Modal for the login form -->
 <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -44,6 +54,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
+        <!-- Form for user login -->
         <form id="login-form">
           <div class="mb-3">
             <label for="username" class="form-label">Username</label>
@@ -63,12 +74,16 @@
   </div>
 </div>
 
+<!-- Background image and content for the About Us section -->
 <div class="background-image"></div>
 <div class="content">
   <h1>About Us</h1>
   <p>This is our about online game website! Our mission is to provide gamers with a comprehensive platform where they can explore, discover, and learn more about their favorite games. Whether you're looking for in-depth reviews, game mechanics breakdowns, or just curious about the latest releases, Gamebout is here to help. We aim to make it easier for players of all levels to connect with the games they love while uncovering new adventures along the way. Happy gaming!</p>
 </div>
+
+<!-- Bootstrap JS for enabling functionality -->
 <script src="bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
+<!-- Link to custom JavaScript for login functionality -->
 <script src="Login.js"></script>
 </body>
 </html>
