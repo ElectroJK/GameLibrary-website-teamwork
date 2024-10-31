@@ -1,4 +1,4 @@
-let ratingsData = [];
+let ratingsData = JSON.parse(localStorage.getItem('ratingsData')) || [];
 
 document.getElementById('rating-form').addEventListener('submit', function (event) {
   event.preventDefault();
@@ -17,6 +17,8 @@ document.getElementById('rating-form').addEventListener('submit', function (even
     rating: parseInt(rating),
     review: review
   });
+
+  localStorage.setItem('ratingsData', JSON.stringify(ratingsData));
 
   alert("Thank you for your review!");
 
@@ -44,5 +46,8 @@ function displayReviews() {
 
 function deleteReview(index) {
   ratingsData.splice(index, 1);
+  localStorage.setItem('ratingsData', JSON.stringify(ratingsData));
   displayReviews();
 }
+
+displayReviews();
