@@ -105,13 +105,22 @@ h2 {
   padding: 20px;
   transition: opacity 0.5s ease, visibility 0.5s ease;
   z-index: 1;
+  box-sizing: border-box;
+  overflow: hidden;
+  word-wrap: break-word;
+}
+
+.genre-info h3, .genre-info p {
+  margin: 10px 0;
+  max-width: 90%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .genre:hover .genre-info {
   opacity: 1;
   visibility: visible;
 }
-
 
 .icon {
   width: 100%;
@@ -136,9 +145,17 @@ p {
   margin-top: 10px;
 }
 
+@media (max-width: 992px) {
+  .genre-info {
+    font-size: 1.1em;
+    padding: 15px;
+  }
+}
+
 @media (max-width: 768px) {
-  .genre {
-    width: 100%;
+  .genre-info {
+    font-size: 1em;
+    padding: 10px;
   }
 
   h2 {
@@ -152,15 +169,19 @@ p {
   p {
     font-size: 1.1em;
   }
+}
 
-  .navbar {
-    flex-direction: column;
+@media (max-width: 576px) {
+  .genre-info {
+    font-size: 0.9em;
+    padding: 8px;
   }
 }
 
 @media (max-width: 480px) {
-  .genre {
-    width: 100%;
+  .genre-info {
+    font-size: 0.8em;
+    padding: 6px;
   }
 
   h2 {
@@ -173,10 +194,6 @@ p {
 
   p {
     font-size: 1.1em;
-  }
-
-  .navbar {
-    flex-direction: column;
   }
 
   .navbar-toggler {
