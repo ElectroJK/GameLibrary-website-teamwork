@@ -28,7 +28,7 @@ function login() {
   const password = document.getElementById("password").value;
 
   if (username.length > 14) {
-    alert("Username must be 25 characters or fewer.");
+    alert("Username must be 14 characters or fewer.");
     return;
   }
 
@@ -39,8 +39,13 @@ function login() {
     return;
   }
 
+  if (password.length > 30) {
+    alert("Relax, are you really afraid of hackers? Max symbols are 30 for password.");
+    return;
+  }
+
   if (!passwordPattern.test(password)) {
-    alert("Password must be at least 8 characters long, contain at least one uppercase letter, one digit, and one special character.");
+    alert("Password must be at least 8 characters long, contain at least one uppercase letter, one digit, and one special character. Yeah I know that this is insane, but this is for your safety");
     return;
   }
 
@@ -50,7 +55,6 @@ function login() {
   const loginModal = bootstrap.Modal.getInstance(document.getElementById("loginModal"));
   loginModal.hide();
 }
-
 
 function logout() {
   const isConfirmed = confirm("Are you sure you want to log out?");
