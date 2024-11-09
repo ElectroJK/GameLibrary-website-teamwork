@@ -1,7 +1,9 @@
 document.addEventListener("DOMContentLoaded", function() {
   const isLoggedIn = localStorage.getItem("isLoggedIn");
-  if (isLoggedIn === "true") {
-    showLogout();
+  const username = localStorage.getItem("username");
+
+  if (isLoggedIn === "true" && username) {
+    showLogout(username);
   } else {
     showLogin();
   }
@@ -25,6 +27,11 @@ function login() {
   const username = document.getElementById("username").value.trim();
   const password = document.getElementById("password").value;
 
+  if (username.length > 14) {
+    alert("Username must be 25 characters or fewer.");
+    return;
+  }
+
   const passwordPattern = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]).{8,}$/;
 
   if (!username || !password) {
@@ -38,15 +45,18 @@ function login() {
   }
 
   localStorage.setItem("isLoggedIn", "true");
-  showLogout();
+  localStorage.setItem("username", username);
+  showLogout(username);
   const loginModal = bootstrap.Modal.getInstance(document.getElementById("loginModal"));
   loginModal.hide();
 }
+
 
 function logout() {
   const isConfirmed = confirm("Are you sure you want to log out?");
   if (isConfirmed) {
     localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("username");
     showLogin();
   }
 }
@@ -54,9 +64,14 @@ function logout() {
 function showLogin() {
   document.getElementById("login-btn").style.display = "inline-block";
   document.getElementById("logout-btn").style.display = "none";
+  document.getElementById("username-display").style.display = "none";
 }
 
-function showLogout() {
+function showLogout(username) {
   document.getElementById("login-btn").style.display = "none";
   document.getElementById("logout-btn").style.display = "inline-block";
+  const usernameDisplay = document.getElementById("username-display");
+  usernameDisplay.textContent = `Gamer: ${username}`;
+  usernameDisplay.style.fontWeight = "bold";
+  usernameDisplay.style.display = "inline-block";
 }

@@ -8,14 +8,15 @@ header {
   transition: background-color 0.5s ease;
   border-bottom: 2px solid rgba(0, 0, 0, 0.2);
 }
+
 .nav-link {
   transition: color 0.5s ease;
 }
+
 .nav-link:hover {
   text-decoration: underline;
   opacity: 0.8;
 }
-
 
 .navbar-toggler {
   border: none;
@@ -31,25 +32,32 @@ body {
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  height: 100vh;
+  height: 100%;
+  min-height: 100vh;
+  background-color: #2b2d36;
+  overflow-y: auto;
 }
 
 section {
   margin-top: 50px;
-  background: rgb(61, 61, 61);
   border-radius: 0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   padding: 40px;
   max-width: 1000px;
   width: 100%;
   color: #373A40;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 h2 {
   font-family: "Silkscreen", sans-serif;
-  font-size: 2.5em;
+  font-size: 3em;
   color: #ee700d;
   margin-bottom: 20px;
   text-align: center;
@@ -57,9 +65,9 @@ h2 {
 
 .genres-cont {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 20px;
-  justify-content: center;
+  justify-content: flex-start;
   position: relative;
 }
 
@@ -67,7 +75,7 @@ h2 {
   background: rgba(55, 58, 64, 0.5);
   border-radius: 5px;
   padding: 0;
-  width: calc(33% - 20px);
+  width: 100%;
   position: relative;
   text-align: center;
   overflow: hidden;
@@ -75,7 +83,7 @@ h2 {
 }
 
 .genre:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .genre-info {
@@ -87,9 +95,10 @@ h2 {
   right: 0;
   bottom: 0;
   font-family: "Silkscreen", sans-serif;
-  font-size: smaller;
+  font-size: 1.2em;
   color: white;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -103,6 +112,7 @@ h2 {
   visibility: visible;
 }
 
+
 .icon {
   width: 100%;
   height: 100%;
@@ -114,31 +124,37 @@ h2 {
 }
 
 h3 {
-  font-size: 1.4em;
+  font-size: 1.8em;
   color: #ee700d;
   margin-bottom: 10px;
+  text-align: center;
 }
 
 p {
-  font-size: 1em;
+  font-size: 1.2em;
   color: #dedecf;
+  margin-top: 10px;
 }
 
 @media (max-width: 768px) {
   .genre {
-    width: calc(50% - 20px);
+    width: 100%;
   }
 
   h2 {
-    font-size: 2em;
+    font-size: 2.5em;
   }
 
   h3 {
-    font-size: 1.5em;
+    font-size: 1.7em;
   }
 
   p {
-    font-size: 0.5em;
+    font-size: 1.1em;
+  }
+
+  .navbar {
+    flex-direction: column;
   }
 }
 
@@ -148,22 +164,36 @@ p {
   }
 
   h2 {
-    font-size: 1.8em;
+    font-size: 2.2em;
   }
 
   h3 {
-    font-size: 1.0em;
+    font-size: 1.5em;
   }
 
   p {
-    font-size: 0.5em;
+    font-size: 1.1em;
+  }
+
+  .navbar {
+    flex-direction: column;
+  }
+
+  .navbar-toggler {
+    display: block;
+  }
+
+  .navbar-collapse {
+    width: 100%;
+    text-align: center;
   }
 }
+
 .modal-header .btn-close {
-  filter: ;
   background-color: red;
   opacity: 1;
 }
+
 .modal-header .btn-close:hover {
   background-color: darkred;
 }

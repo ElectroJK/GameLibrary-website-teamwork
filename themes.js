@@ -12,13 +12,16 @@ function setModalStyles(backgroundColor, textColor) {
 
 function colorBlack() {
   document.body.style.background = "black";
-
   document.querySelectorAll('*').forEach(function (element) {
     element.style.color = "white";
   });
 
-  setModalStyles("rgba(0, 0, 0, 0.9)", "white");
+  const usernameDisplay = document.getElementById("username-display");
+  if (usernameDisplay) {
+    usernameDisplay.style.color = "white";
+  }
 
+  setModalStyles("rgba(0, 0, 0, 0.9)", "white");
   document.querySelectorAll('.btn-close').forEach(function (element) {
     element.style.color = "white";
   });
@@ -52,13 +55,15 @@ function colorWhite() {
   document.querySelectorAll('p:not(.banner p)').forEach(function (element) {
     element.style.color = "black";
   });
+
+  const usernameDisplay = document.getElementById("username-display");
+  if (usernameDisplay) {
+    usernameDisplay.style.color = "black";
+  }
+
   setModalStyles("rgba(255, 255, 255, 0.9)", "black");
   document.querySelectorAll('.btn-close').forEach(function (element) {
     element.style.color = "black";
-  });
-  const modalHeaders = document.querySelectorAll('.modal-header');
-  modalHeaders.forEach(function (header) {
-    header.classList.add('white-background');
   });
 
   const togglePasswordButton = document.getElementById('toggle-password');
@@ -90,6 +95,12 @@ function colorGray() {
   document.querySelectorAll('p:not(.banner p)').forEach(function (element) {
     element.style.color = "white";
   });
+
+  const usernameDisplay = document.getElementById("username-display");
+  if (usernameDisplay) {
+    usernameDisplay.style.color = "white";
+  }
+
   setModalStyles("rgba(55, 58, 64, 0.9)", "white");
   document.querySelectorAll('.btn-close').forEach(function (element) {
     element.style.color = "white";
@@ -115,7 +126,6 @@ function colorGray() {
   document.documentElement.style.setProperty('--beige-light', '#e3c398');
   document.documentElement.style.setProperty('--brown-light', '#6C4E31');
 }
-
 
 function setTheme(theme) {
   const navbar = document.querySelector('#navbar4all .navbar');
@@ -153,7 +163,15 @@ function setTheme(theme) {
     dropdownMenus.forEach(menu => {
       menu.style.backgroundColor = '#1f1e1e';
       const dropdownItems = menu.querySelectorAll('.dropdown-item');
-      dropdownItems.forEach(item => { item.style.color = 'white'; });
+      dropdownItems.forEach(item => {
+        item.style.color = 'white';
+        item.addEventListener('mouseenter', function() {
+          item.style.backgroundColor = '#444';
+        });
+        item.addEventListener('mouseleave', function() {
+          item.style.backgroundColor = '';
+        });
+      });
     });
 
     containerCenter.style.backgroundColor = '#333';
@@ -162,7 +180,6 @@ function setTheme(theme) {
     continuePage.style.color = 'white';
     footer.style.backgroundColor = '#222';
     textbox.style.backgroundColor = 'rgba(243,109,27,0.74)';
-
 
     document.querySelectorAll('.text-cust').forEach(function (element) {
       element.style.color = '';
@@ -191,7 +208,15 @@ function setTheme(theme) {
     dropdownMenus.forEach(menu => {
       menu.style.backgroundColor = 'rgba(255,255,255,0.8)';
       const dropdownItems = menu.querySelectorAll('.dropdown-item');
-      dropdownItems.forEach(item => { item.style.color = 'black'; });
+      dropdownItems.forEach(item => {
+        item.style.color = 'black';
+        item.addEventListener('mouseenter', function() {
+          item.style.backgroundColor = '#ddd';
+        });
+        item.addEventListener('mouseleave', function() {
+          item.style.backgroundColor = '';
+        });
+      });
     });
 
     containerCenter.style.backgroundColor = '#f5f5f5';
@@ -201,7 +226,6 @@ function setTheme(theme) {
     footer.style.backgroundColor = '#e9e9e9';
     textbox.style.backgroundColor = 'rgba(255,166,110,0.74)';
     textbox.style.color = 'black';
-
 
     document.querySelectorAll('.text-cust').forEach(function (element) {
       element.style.color = '';
@@ -229,7 +253,15 @@ function setTheme(theme) {
     dropdownMenus.forEach(menu => {
       menu.style.backgroundColor = '#373A40';
       const dropdownItems = menu.querySelectorAll('.dropdown-item');
-      dropdownItems.forEach(item => { item.style.color = 'white'; });
+      dropdownItems.forEach(item => {
+        item.style.color = 'white';
+        item.addEventListener('mouseenter', function() {
+          item.style.backgroundColor = '#555';
+        });
+        item.addEventListener('mouseleave', function() {
+          item.style.backgroundColor = '';
+        });
+      });
     });
     loginButton.style.color = 'white';
     logoutButton.style.color = 'white';
@@ -239,7 +271,6 @@ function setTheme(theme) {
     continuePage.style.color = 'white';
     footer.style.backgroundColor = '#373A40';
     textbox.style.backgroundColor = '';
-
 
     document.querySelectorAll('.text-cust').forEach(function (element) {
       element.style.color = '';
@@ -257,6 +288,7 @@ function setTheme(theme) {
 
   localStorage.setItem('theme', theme);
 }
+
 
 
 window.onload = function () {

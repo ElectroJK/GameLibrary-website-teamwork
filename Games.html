@@ -13,31 +13,32 @@
 
 <header id="navbar4all">
   <nav class="navbar fixed-top navbar-expand-lg navbar-light navbar-custom">
-        <div class="container-fluid">
-          <a class="navbar-brand logo" href="main.html" id="logo-link" style="color: white; font-size: 40px;">Gamebout</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="border: none;">
-                <span class="navbar-toggler-icon" style="background-image: url('https://i0.wp.com/benjaminmarcello.nl/wp-content/uploads/2021/12/menu-icon-PNG-1.png?fit=500%2C500&ssl=1'); width: 60px; height: 40px;"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item me-4">
-                        <a class="nav-link" href="Games.html" style="color: white; font-size: 30px;">Featured Games</a>
-                    </li>
-                    <li class="nav-item me-4">
-                        <a class="nav-link" href="genre.html" style="color: white; font-size: 30px;">Genre</a>
-                    </li>
-                    <li class="nav-item me-4">
-                        <a class="nav-link" href="news.html" style="color: white; font-size: 30px;">News</a>
-                    </li>
-                    <li class="nav-item me-4">
-                        <a class="nav-link" href="Games_rating.html" style="color: white; font-size: 30px;">Games Rating</a>
-                    </li>
-                </ul>
-              <button id="login-btn" class="btn btn-outline-primary ms-1" style="font-size: 30px;" onclick="toggleLogin()">Login</button>
-              <button id="logout-btn" class="btn btn-outline-primary ms-1" style="font-size: 30px; display: none;" onclick="logout()">Logout</button>
-            </div>
-        </div>
-    </nav>
+    <div class="container-fluid">
+      <a class="navbar-brand logo" href="main.html" style="color: white; font-size: 40px;">Gamebout</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="border: none">
+        <span class="navbar-toggler-icon" style="background-image:url('https://i0.wp.com/benjaminmarcello.nl/wp-content/uploads/2021/12/menu-icon-PNG-1.png?fit=500%2C500&ssl=1'); width: 60px; height: 40px;"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item me-4">
+            <a class="nav-link" href="Games.html" style="color: white; font-size: 30px;">Featured Games</a>
+          </li>
+          <li class="nav-item me-4">
+            <a class="nav-link" href="genre.html" style="color: white; font-size: 30px;">Genre</a>
+          </li>
+          <li class="nav-item me-4">
+            <a class="nav-link" href="news.html" style="color: white; font-size: 30px;">News</a>
+          </li>
+          <li class="nav-item me-4">
+            <a class="nav-link" href="Games_rating.html" style="color: white; font-size: 30px;">Games Rating</a>
+          </li>
+        </ul>
+        <span id="username-display" style="color: white; font-size: 30px; margin-right: 15px; display: none;"></span>
+        <button id="login-btn" class="btn btn-outline-primary ms-1" style="font-size: 30px;" onclick="toggleLogin()">Login</button>
+        <button id="logout-btn" class="btn btn-outline-primary ms-1" style="font-size: 30px; display: none;" onclick="logout()">Logout</button>
+      </div>
+    </div>
+  </nav>
 </header>
 
 <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
@@ -51,7 +52,7 @@
         <form id="login-form">
           <div class="mb-3">
             <label for="username" class="form-label">Username</label>
-            <input type="text" class="form-control" id="username" placeholder="Enter your username" required>
+            <input type="text" class="form-control" id="username" maxlength="14" placeholder="Enter your username" required>
           </div>
           <div class="mb-3">
             <label for="password" class="form-label">Password</label>

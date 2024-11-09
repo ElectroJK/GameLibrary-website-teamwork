@@ -1,26 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&family=Silkscreen:wght@400;700&display=swap');
-*{
-  color:white;
+
+* {
+  color: white;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
 body {
   font-family: "Silkscreen", sans-serif;
-  margin: 0;
-  font-family: "Handjet", sans-serif;
+  background-color: #2b2d36;
+}
+
+h1, p {
+  font-family: "Silkscreen", sans-serif;
 }
 
 .form-label {
   color: black;
 }
 
-.modal-title{
+.modal-title {
   color: black;
 }
 
-.custom-bg{
+.custom-bg {
   background-color: #059212;
 }
- header {
+
+header {
   font-family: "Handjet", sans-serif;
 }
 
@@ -28,14 +37,15 @@ body {
   transition: background-color 0.5s ease;
   border-bottom: 2px solid rgba(0, 0, 0, 0.2);
 }
+
 .nav-link {
   transition: color 0.5s ease;
 }
+
 .nav-link:hover {
   text-decoration: underline;
   opacity: 0.8;
 }
-
 
 .navbar-toggler {
   border: none;
@@ -46,43 +56,107 @@ body {
   outline: none;
 }
 
-
-
 .background-image {
   background-image: url('Abzu.jpg');
   background-size: cover;
   background-position: center;
   height: 65vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
 }
 
 .content {
-  margin-top: 10px;
+  z-index: 1;
   padding: 20px;
   text-align: center;
-  position: relative;
-  z-index: 1;
 }
 
 h1 {
-  font-family: "Silkscreen", sans-serif;
+  font-size: 2.5em;
   margin-bottom: 20px;
 }
 
 p {
   max-width: 800px;
   margin: 0 auto;
-  font-family: "Silkscreen", sans-serif;
+  font-size: 1.2em;
+  line-height: 1.6;
 }
+
 .navbar-custom {
   background-color: rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s ease;
 }
+
 .modal-header .btn-close {
-  filter: ;
   background-color: red;
   opacity: 1;
 }
+
 .modal-header .btn-close:hover {
   background-color: darkred;
 }
 
+@media (max-width: 768px) {
+  .background-image {
+    height: 50vh;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  p {
+    font-size: 1.1em;
+    padding: 0 20px;
+  }
+
+  .navbar {
+    flex-direction: column;
+  }
+
+  .navbar-toggler {
+    display: block;
+  }
+
+  .navbar-collapse {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .background-image {
+    height: 45vh;
+  }
+
+  h1 {
+    font-size: 1.8em;
+  }
+
+  p {
+    font-size: 1em;
+    padding: 0 15px;
+  }
+
+  .content {
+    padding: 15px;
+  }
+
+  .navbar {
+    flex-direction: column;
+  }
+
+  .navbar-toggler {
+    display: block;
+  }
+
+  .navbar-collapse {
+    width: 100%;
+    text-align: center;
+  }
+}
