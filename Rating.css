@@ -4,7 +4,6 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: "Silkscreen", sans-serif;
 }
 
 .navbar {
@@ -52,6 +51,7 @@ main {
   margin-top: 70px;
   flex: 1;
   width: 100%;
+  font-family: "Silkscreen", sans-serif;
 }
 
 section {
@@ -65,6 +65,7 @@ section {
   margin: 20px 0;
   box-sizing: border-box;
   overflow: hidden;
+  font-family: "Silkscreen", sans-serif;
 }
 
 h2 {
