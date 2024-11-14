@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&family=Silkscreen:wght@400;700&display=swap');
+
+body {
+  background-color: #2e2e2e;
+  color: #d3d3d3;
+  font-family:"Silkscreen", sans-serif;
+}
+.profile-container {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #3e3e3e;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+.profile-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.profile-header h2 {
+  color: #d3d3d3;
+  margin: 0;
+}
+.profile-section {
+  margin-bottom: 15px;
+}
+.profile-section h3 {
+  font-size: 1.1rem;
+  color: #cccccc;
+  margin-bottom: 5px;
+}
+.profile-section p {
+  margin: 0;
+}
+#username-display {
+  display: none;
+  color: #d3d3d3;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
