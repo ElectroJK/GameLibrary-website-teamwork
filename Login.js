@@ -75,6 +75,6 @@ function showLogout(username) {
   document.getElementById("login-btn").style.display = "none";
   document.getElementById("logout-btn").style.display = "inline-block";
   const usernameDisplay = document.getElementById("username-display");
-  usernameDisplay.innerHTML = `<a href="profile" style="font-weight: bold; text-decoration: none; color: inherit;">Gamer: ${username}</a>`;
+  usernameDisplay.innerHTML = `<a href="Profile" style="font-weight: bold; text-decoration: none; color: inherit;">Gamer: ${username}</a>`;
   usernameDisplay.style.display = "inline-block";
 }
