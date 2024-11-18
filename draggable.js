@@ -2,7 +2,6 @@ const image = document.getElementById('draggable-image');
 
 let offsetX, offsetY;
 
-
 window.addEventListener('load', () => {
   const savedLeft = localStorage.getItem('imageLeft');
   const savedTop = localStorage.getItem('imageTop');
@@ -16,65 +15,34 @@ window.addEventListener('load', () => {
   }
 });
 
-image.addEventListener('mousedown', startDrag);
-image.addEventListener('touchstart', startDrag);
+image.addEventListener('pointerdown', startDrag);
 
 function startDrag(e) {
   e.preventDefault();
 
-  if (e.type === 'mousedown') {
-    offsetX = e.clientX - image.getBoundingClientRect().left;
-    offsetY = e.clientY - image.getBoundingClientRect().top;
-  } else if (e.type === 'touchstart') {
-    const touch = e.touches[0];
-    offsetX = touch.clientX - image.getBoundingClientRect().left;
-    offsetY = touch.clientY - image.getBoundingClientRect().top;
-  }
+  offsetX = e.clientX - image.getBoundingClientRect().left;
+  offsetY = e.clientY - image.getBoundingClientRect().top;
 
-  document.addEventListener('mousemove', mouseMoveHandler);
-  document.addEventListener('touchmove', touchMoveHandler);
-  document.addEventListener('mouseup', mouseUpHandler);
-  document.addEventListener('touchend', touchEndHandler);
-
+  document.addEventListener('pointermove', moveHandler);
+  document.addEventListener('pointerup', endDrag);
   image.style.cursor = 'grabbing';
 }
 
-function mouseMoveHandler(e) {
-  const newLeft = e.clientX - offsetX;
-  const newTop = e.clientY - offsetY;
+function moveHandler(e) {
+  e.preventDefault();
 
-  image.style.left = `${newLeft}px`;
-  image.style.top = `${newTop}px`;
-
-
-  localStorage.setItem('imageLeft', newLeft);
-  localStorage.setItem('imageTop', newTop);
-}
-
-function touchMoveHandler(e) {
-  const touch = e.touches[0];
-  const newLeft = touch.clientX - offsetX;
-  const newTop = touch.clientY - offsetY;
+  const newLeft = Math.max(0, Math.min(window.innerWidth - image.offsetWidth, e.clientX - offsetX));
+  const newTop = Math.max(0, Math.min(window.innerHeight - image.offsetHeight, e.clientY - offsetY));
 
   image.style.left = `${newLeft}px`;
   image.style.top = `${newTop}px`;
 
   localStorage.setItem('imageLeft', newLeft);
   localStorage.setItem('imageTop', newTop);
-}
-
-function mouseUpHandler() {
-  endDrag();
-}
-
-function touchEndHandler() {
-  endDrag();
 }
 
 function endDrag() {
-  document.removeEventListener('mousemove', mouseMoveHandler);
-  document.removeEventListener('touchmove', touchMoveHandler);
-  document.removeEventListener('mouseup', mouseUpHandler);
-  document.removeEventListener('touchend', touchEndHandler);
+  document.removeEventListener('pointermove', moveHandler);
+  document.removeEventListener('pointerup', endDrag);
   image.style.cursor = 'grab';
 }
