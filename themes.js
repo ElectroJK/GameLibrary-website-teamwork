@@ -10,16 +10,24 @@ function setModalStyles(backgroundColor, textColor) {
   });
 }
 
+function updateUsernameDisplay(color) {
+  const usernameDisplay = document.getElementById("username-display");
+  if (usernameDisplay) {
+    usernameDisplay.style.color = color;
+    const link = usernameDisplay.querySelector("a");
+    if (link) {
+      link.style.color = color;
+    }
+  }
+}
+
 function colorBlack() {
   document.body.style.background = "black";
   document.querySelectorAll('*').forEach(function (element) {
     element.style.color = "white";
   });
 
-  const usernameDisplay = document.getElementById("username-display");
-  if (usernameDisplay) {
-    usernameDisplay.style.color = "white";
-  }
+  updateUsernameDisplay("white");
 
   setModalStyles("rgba(0, 0, 0, 0.9)", "white");
   document.querySelectorAll('.btn-close').forEach(function (element) {
@@ -56,10 +64,7 @@ function colorWhite() {
     element.style.color = "black";
   });
 
-  const usernameDisplay = document.getElementById("username-display");
-  if (usernameDisplay) {
-    usernameDisplay.style.color = "black";
-  }
+  updateUsernameDisplay("black");
 
   setModalStyles("rgba(255, 255, 255, 0.9)", "black");
   document.querySelectorAll('.btn-close').forEach(function (element) {
@@ -96,10 +101,7 @@ function colorGray() {
     element.style.color = "white";
   });
 
-  const usernameDisplay = document.getElementById("username-display");
-  if (usernameDisplay) {
-    usernameDisplay.style.color = "white";
-  }
+  updateUsernameDisplay("white");
 
   setModalStyles("rgba(55, 58, 64, 0.9)", "white");
   document.querySelectorAll('.btn-close').forEach(function (element) {
